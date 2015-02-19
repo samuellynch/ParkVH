@@ -2,6 +2,8 @@
   <dictionary name="samuel">
     <words>
       <w>csrf</w>
+      <w>sqlalchemy</w>
+      <w>sqlite</w>
     </words>
   </dictionary>
 </component>
