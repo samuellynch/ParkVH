@@ -1,61 +1,72 @@
-.slideout-menu {
-	position: fixed;
-	top: 0;
-	left: -250px;
-	width: 250px;
-	height: 100%;
-	background: #333;
-	z-index: 100;
+/* Initial body */
+body {
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
 }
-.slideout-menu h3 {
-	position: relative;
-	padding: 12px 10px;
-	color: #fff;
-	font-size: 1.2em;
-	font-weight: 400;
-	border-bottom: 4px solid #222;
+
+/* Initial menu */
+.menu {
+  background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
+  left: -285px;  /* start off behind the scenes */
+  height: 100%;
+  position: fixed;
+  width: 285px;
 }
-.slideout-menu .slideout-menu-toggle {
-	position: absolute;
-	top: 12px;
-	right: 10px;
-	display: inline-block;
-	padding: 6px 9px 5px;
-	font-family: Arial, sans-serif;
-	font-weight: bold;
-	line-height: 1;
-	background: #222;
-	color: #999;
-	text-decoration: none;
-	vertical-align: top;
+
+/* Basic styling */
+
+.jumbotron {
+  background-image: url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/bg.png'); 
+  height: 100%;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
 }
-.slideout-menu .slideout-menu-toggle:hover {
-	color: #fff;
+
+.menu ul {
+  border-top: 1px solid #636366;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.slideout-menu ul {
-	list-style: none;
-	font-weight: 300;
-	border-top: 1px solid #151515;
-	border-bottom: 1px solid #454545;
+
+.menu li {
+  border-bottom: 1px solid #636366;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 45px;
+  padding-bottom: 3px;
+  padding-left: 20px;
+  padding-top: 3px;
 }
-.slideout-menu ul li {
-	border-top: 1px solid #454545;
-	border-bottom: 1px solid #151515;
+
+.menu a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
-.slideout-menu ul li a {
-	position: relative;
-	display: block;
-	padding: 10px;
-	color: #999;
-	text-decoration: none;
+
+.icon-close {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-top: 10px;
 }
-.slideout-menu ul li a:hover {
-	background: #000;
-	color: #fff;
+
+.icon-menu {
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
-.slideout-menu ul li a i {
-	position: absolute;
-	top: 15px;
-	right: 10px;
-	opacity: .5;
+
+.icon-menu i {
+  margin-right: 5px;
 }

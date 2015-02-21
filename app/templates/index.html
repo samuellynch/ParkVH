@@ -1,14 +1,98 @@
-<!DOCTYPE html>
-<div class="slideout-menu">
-	<h3>Menu <a href="#" class="slideout-menu-toggle">×</a></h3>
-	<ul>
-		<li><a href="#">Home <i class="fa fa-angle-right"></i></a></li>
-		<li><a href="#">Tour Information <i class="fa fa-angle-right"></i></a></li>
-		<li><a href="#">Tour Pricing <i class="fa fa-angle-right"></i></a></li>
-		<li><a href="#">Photo Gallery <i class="fa fa-angle-right"></i></a></li>
-		<li><a href="#">News & Events <i class="fa fa-angle-right"></i></a></li>
-	</ul>
-    <style src="C:\Users\samuel\PycharmProjects\ParkVH\app\static\css\menu.css"></style>
-    <style src="C:\Users\samuel\PycharmProjects\ParkVH\app\static\js\menu.js"></style>
-</div>
-<!--/.slideout-menu-->
+<html>
+
+    <head>
+        <style>
+        .menu{
+            background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
+            left: -285px;  /* start off behind the scenes */
+            height: 100%;
+            position: fixed;
+            width: 285px;
+        }
+
+        .jumbotron{
+            background-image: url('http://www.physiomotions.co.uk/uploads/2/2/0/4/22048654/6711609_orig.jpg');
+            height: 100%;
+            -webkit-background-size: cover;
+                -moz-background-size: cover;
+                    -o-background-size: cover;
+                        background-size: cover;
+        }
+
+        .menu ul {
+            border-top: 1px solid #636366;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            border-bottom: 1px solid #636366;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 45px;
+            padding-bottom: 3px;
+            padding-left: 20px;
+            padding-top: 3px;
+        }
+
+        .menu a {
+            color: #fff;
+            font-size: 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .icon-close {
+            cursor: pointer;
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+
+        .icon-menu {
+            color: #fff;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            padding-bottom: 25px;
+            padding-left: 25px;
+            padding-top: 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .icon-menu i {
+            margin-right: 5px;
+        }
+        </style>
+
+    </head>
+  <body>
+
+    <div class="menu">
+      
+      <!-- Menu icon -->
+      <div class="icon-close">
+        <img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png">
+      </div>
+
+      <!-- Menu -->
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Training Programme</a></li>
+        <li><a href="#">Training Progress</a></li>
+        <li><a href="#">Personal Best</a></li>
+        <li><a href="#">Profile2</a></li>
+      </ul>
+    </div>
+
+    <!-- Main body -->
+    <div class="jumbotron">
+
+      <div class="icon-menu">
+        <i class="fa fa-bars"></i>
+        Menu
+      </div>
+
+    <script src="C:\Users\samuel\PycharmProjects\ParkVH\app\static\js\menu.js"></script>
+  </body>
+</html>
