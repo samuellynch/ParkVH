@@ -4,6 +4,8 @@
       <w>csrf</w>
       <w>sqlalchemy</w>
       <w>sqlite</w>
+      <w>viewport</w>
+      <w>webkit</w>
     </words>
   </dictionary>
 </component>

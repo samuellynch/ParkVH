@@ -1,98 +1,85 @@
+<!DOCTYPE html>
 <html>
-
     <head>
+        <title>PVH</title>
         <style>
-        .menu{
-            background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
-            left: -285px;  /* start off behind the scenes */
-            height: 100%;
-            position: fixed;
-            width: 285px;
-        }
-
-        .jumbotron{
-            background-image: url('http://www.physiomotions.co.uk/uploads/2/2/0/4/22048654/6711609_orig.jpg');
-            height: 100%;
+       .menu{
+            background-image: url('http://serpi22.dipualba.es/blogcarreraspopulares/wp-content/uploads/2014/11/trail_running12.jpg');
+            height: 200%;
             -webkit-background-size: cover;
                 -moz-background-size: cover;
                     -o-background-size: cover;
                         background-size: cover;
+            overflow-x:hidden;
+            position:relative;
+            left:0;
+
+       }
+
+       .menu-open {
+            left:231px
+       }
+
+       .menu-open .menu-side {
+            left:0;
+       }
+
+        .menu-side,
+        .menu {
+            -webkit-transition: left 0.2s ease;
+            -moz-transition: left 0.2s ease;
+            transition: left 0.2s ease:
         }
 
-        .menu ul {
-            border-top: 1px solid #636366;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+       .menu-side{
+            background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
+            border-right:1px solid #000;
+            color:#fff;
+            position: fixed;
+            top: 0;
+            left: -231px;
+            width: 210px;
+            height: 100%;
+            padding: 10px;
         }
-
-        .menu li {
-            border-bottom: 1px solid #636366;
+        </style>
+        <style>
+       .menu ul {
             font-family: 'Open Sans', sans-serif;
-            line-height: 45px;
-            padding-bottom: 3px;
-            padding-left: 20px;
-            padding-top: 3px;
-        }
-
-        .menu a {
+            text-decoration: none;
+            font-size: 15px;
+       }
+       .menu a {
             color: #fff;
             font-size: 15px;
             text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .icon-close {
-            cursor: pointer;
-            padding-left: 10px;
-            padding-top: 10px;
-        }
-
-        .icon-menu {
-            color: #fff;
-            cursor: pointer;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 16px;
-            padding-bottom: 25px;
-            padding-left: 25px;
-            padding-top: 25px;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .icon-menu i {
-            margin-right: 5px;
-        }
+       }
         </style>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-  <body>
-
-    <div class="menu">
-      
-      <!-- Menu icon -->
-      <div class="icon-close">
-        <img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png">
-      </div>
-
-      <!-- Menu -->
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Training Programme</a></li>
-        <li><a href="#">Training Progress</a></li>
-        <li><a href="#">Personal Best</a></li>
-        <li><a href="#">Profile2</a></li>
-      </ul>
-    </div>
-
-    <!-- Main body -->
-    <div class="jumbotron">
-
-      <div class="icon-menu">
-        <i class="fa fa-bars"></i>
-        Menu
-      </div>
-
-    <script src="C:\Users\samuel\PycharmProjects\ParkVH\app\static\js\menu.js"></script>
-  </body>
+    <body class="menu">
+        <header>
+            <a href="#" class="menu-toggle">Toggle</a>
+            <nav class="menu-side">
+                MENU
+                <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Training Programme</a></li>
+                <li><a href="#">Training Progress</a></li>
+                <li><a href="#">Personal Best</a></li>
+                <li><a href="#">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+            (function() {
+                var body = $('body');
+                $('.menu-toggle').bind('click', function(){
+                    body.toggleClass('menu-open');
+                    return false;
+                });
+            })();
+        </script>
+    </body>
 </html>
