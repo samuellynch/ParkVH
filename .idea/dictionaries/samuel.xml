@@ -2,6 +2,7 @@
   <dictionary name="samuel">
     <words>
       <w>csrf</w>
+      <w>glyphicon</w>
       <w>sqlalchemy</w>
       <w>sqlite</w>
       <w>viewport</w>
