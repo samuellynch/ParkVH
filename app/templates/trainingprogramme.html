@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Training Programme</title>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <style>
+       .menu{
+            background-image: url('http://serpi22.dipualba.es/blogcarreraspopulares/wp-content/uploads/2014/11/trail_running12.jpg');
+            height: 200%;
+            -webkit-background-size: cover;
+                -moz-background-size: cover;
+                    -o-background-size: cover;
+                        background-size: cover;
+            overflow-x:hidden;
+            position:relative;
+            left:0;
+
+       }
+
+       .menu-open {
+            left:231px
+       }
+
+       .menu-open .menu-side {
+            left:0;
+       }
+
+        .menu-side,
+        .menu {
+            -webkit-transition: left 0.2s ease;
+            -moz-transition: left 0.2s ease;
+            transition: left 0.2s ease:
+        }
+
+       .menu-side{
+            background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
+            border-right:1px solid #000;
+            color:#fff;
+            position: fixed;
+            top: 0;
+            left: -231px;
+            width: 210px;
+            height: 100%;
+            padding: 10px;
+        }
+        </style>
+        <style>
+       .menu ul {
+            font-family: 'Open Sans', sans-serif;
+            text-decoration: none;
+            font-size: 15px;
+            border-bottom: 1px solid #636366;
+            line-height: 45px;
+            padding-bottom: 3px;
+            padding-left: 20px;
+            padding-top: 3px;
+       }
+       .menu a {
+            color: #fff;
+            font-size: 15px;
+            text-decoration: none;
+       }
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body class="menu">
+        <header>
+            <a href="#" class="menu-toggle">
+                <button type="button" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> MENU
+                </button>
+            </a>
+            <nav class="menu-side">
+                <a href="#" class="menu-toggle">
+                <button type="button" class="btn btn-default" aria-label="menu-left">
+                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                </button>
+                </a>
+                <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="trainingprogramme">Training Programme</a></li>
+                <li><a href="#">Training Progress</a></li>
+                <li><a href="#">Personal Best</a></li>
+                <li><a href="#">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+            (function() {
+                var body = $('body');
+                $('.menu-toggle').bind('click', function(){
+                    body.toggleClass('menu-open');
+                    return false;
+                });
+            })();
+        </script>
+    </body>
+</html>
