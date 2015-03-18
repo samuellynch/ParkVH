@@ -11,7 +11,7 @@ def login():
         else:
 
             return redirect(url_for('index'))
-    return render_template('login.html', error=error)
+    return render_template('index.html', error=error) # need to change dis stuff soon 
 
 @app.route('/index')
 def index():
