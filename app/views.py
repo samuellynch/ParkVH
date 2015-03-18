@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, request
 from app import app
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
@@ -9,6 +9,7 @@ def login():
         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
             error = 'Invalid Credentials. Please try again.'
         else:
+
             return redirect(url_for('index'))
     return render_template('login.html', error=error)
 
