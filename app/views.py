@@ -1,17 +1,16 @@
 from flask import render_template, redirect, url_for, request
 from app import app
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST']) #it registers what route the user has selected
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin': #displays which username and passwords are accepted
             error = 'Invalid Credentials. Please try again.'
         else:
-
             return redirect(url_for('index'))
-    return render_template('index.html', error=error) # need to change dis stuff soon 
+    return render_template('index.html', error=error)
 
 @app.route('/index')
 def index():
@@ -47,3 +46,12 @@ def profile():
     return render_template("profile.html",
                            title='profile',
                            user=user)
+
+@app.route("/adminlog", methods=['GET', 'POST'])
+def adminlog():
+    error = None
+    if request.form['pin'] != '0000':
+        error = 'invalid pin. please try again'
+    else:
+        return redirect(url_for('admin'))
+    return render_template('admin.html', error=error)
