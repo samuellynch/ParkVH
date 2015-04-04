@@ -1,16 +1,16 @@
 from flask import render_template, redirect, url_for, request
 from app import app
 
-@app.route('/', methods=['GET', 'POST']) #it registers what route the user has selected
+@app.route('/', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin': #displays which username and passwords are accepted
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
             error = 'Invalid Credentials. Please try again.'
         else:
             return redirect(url_for('index'))
-    return render_template('index.html', error=error)
+    return render_template('login.html', error=error)
 
 @app.route('/index')
 def index():
@@ -47,11 +47,19 @@ def profile():
                            title='profile',
                            user=user)
 
-@app.route("/adminlog", methods=['GET', 'POST'])
+@app.route('/admin', methods=['GET', 'POST'])
 def adminlog():
     error = None
-    if request.form['pin'] != '0000':
-        error = 'invalid pin. please try again'
-    else:
-        return redirect(url_for('admin'))
-    return render_template('admin.html', error=error)
+    if request.method == 'POST':
+        if request.form['pin'] != '0000':
+            error = 'Invalid Credentials. Please try again.'
+        else:
+            return redirect(url_for('admin'))
+    return render_template('adminlog.html', error=error)
+
+@app.route('/admin')
+def admin():
+    user = {'nickname': 'samuel'}  # fake user
+    return render_template('admin.html',
+                           title='Home',
+                           user=user)
