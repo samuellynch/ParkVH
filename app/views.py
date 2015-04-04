@@ -6,7 +6,7 @@ from app import app
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+        if request.form['username'] != 'user1' or request.form['password'] != 'password':
             error = 'Invalid Credentials. Please try again.'
         else:
             return redirect(url_for('index'))
@@ -59,7 +59,7 @@ def adminlog():
 
 @app.route('/admin')
 def admin():
-    user = {'nickname': 'samuel'}  # fake user
-    return render_template('admin.html',
-                           title='Home',
+    user = {'nickname': 'samuel'}
+    return render_template("admin.html",
+                           title='admin',
                            user=user)
