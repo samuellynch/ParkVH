@@ -1,6 +1,8 @@
 from flask import render_template, redirect, url_for, request
 from app import app
+from .forms import LoginForm
 
+# route for handling login page
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
 def login():
