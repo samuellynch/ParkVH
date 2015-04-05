@@ -3,11 +3,14 @@
     <words>
       <w>adminlog</w>
       <w>csrf</w>
+      <w>dataentry</w>
+      <w>datestamp</w>
       <w>glyphicon</w>
       <w>jumbotron</w>
       <w>personalbest</w>
       <w>sqlalchemy</w>
       <w>sqlite</w>
+      <w>tablecreate</w>
       <w>trainingprogramme</w>
       <w>trainingprogress</w>
       <w>viewport</w>

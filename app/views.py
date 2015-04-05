@@ -34,13 +34,6 @@ def trainingprogress():
                            title='trainingprogress',
                            user=user)
 
-@app.route("/personalbest")
-def personalbest():
-    user = {'nickname': 'samuel'}
-    return render_template("personalbest.html",
-                           title='personalbest',
-                           user=user)
-
 @app.route("/profile")
 def profile():
     user = {'nickname': 'samuel'}
