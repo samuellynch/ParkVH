@@ -1,6 +1,5 @@
 from flask import render_template, redirect, url_for, request
 from app import app
-from .forms import LoginForm
 
 # route for handling login page
 @app.route('/', methods=['GET', 'POST'])
@@ -49,7 +48,7 @@ def profile():
                            title='profile',
                            user=user)
 
-@app.route('/admin', methods=['GET', 'POST'])
+@app.route('/adminlog', methods=['GET', 'POST'])
 def adminlog():
     error = None
     if request.method == 'POST':
