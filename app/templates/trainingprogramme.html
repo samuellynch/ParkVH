@@ -63,6 +63,9 @@
         .jumbotron h3 {
             font-size: 12px
         }
+        .row {
+            text-align: center;
+        }
         </style>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -95,15 +98,22 @@
             </div>
         </div>
         <div class="row">
-                <div class="col-md-5">
-            <div class="jumbotron">
-                <div class="container">
-                    <h2>All your running needs in one place</h2>
-                    <h3>some more text as a way of running a test </h3>
+            <div class="container">
+                <div class="jumbotron">
+                    <form action="" method="post">
+                        <input type="text" placeholder="Name" name="name" value="{{
+                            request.form.name }}">
+                        <input type="text" placeholder="Running" name="running" value="{{
+                            request.form.running }}">
+                        <input type="text" placeholder="Cycling" name="cycling" value="{{
+                            request.form.cycling }}">
+                        <input type="text" placeholder="Swimming" name="swimming" value="{{
+                            request.form.swimming }}">
+                        <input class="btn btn-default" type="submit" value="Submit">
+                    </form>
                 </div>
             </div>
-                </div>
-            </div>
+        </div>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>
