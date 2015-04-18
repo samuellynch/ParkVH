@@ -1,5 +1,7 @@
 from flask import render_template, redirect, url_for, request
+import json
 from app import app
+
 
 # route for handling login page
 @app.route('/', methods=['GET', 'POST'])
@@ -22,28 +24,36 @@ def index():
                            user=user)
 
 
-@app.route("/trainingprogramme")
+@app.route("/trainingprogramme", methods=['GET', 'POST'])
 def trainingprogramme():
+    with open('activity.json', 'r') as f:
+        data = json.loads(f.read())
+    if request.method == 'POST':
+        data.append([request.form['name'], request.form['date'], request.form['activity'], request.form['speed'],
+                     request.form['hours']])
+        with open('activity.json', 'w') as f:
+            f.write(json.dumps(data))
     user = {'nickname': 'runner'}
     return render_template("trainingprogramme.html",
-                           title='trainingprogramme',
+                           title='profile',
                            user=user,
-                           form=form,)
-
-@app.route("/trainingprogress")
-def trainingprogress():
-    user = {'nickname': 'runner'}
-    return render_template("trainingprogress.html",
-                           title='trainingprogress',
-                           user=user)
+                           training=data)
 
 
-@app.route("/profile")
+@app.route("/profile", methods=['GET', 'POST'])
 def profile():
+    with open('profile.json', 'r') as f:
+        data = json.loads(f.read())
+    if request.method == 'POST':
+        data.append([request.form['name'], request.form['age'], request.form['Gender'], request.form['MedInfo'],
+                     request.form['RecentAct']])
+        with open('profile.json', 'w') as f:
+            f.write(json.dumps(data))
     user = {'nickname': 'runner'}
     return render_template("profile.html",
                            title='profile',
-                           user=user)
+                           user=user,
+                           profile=data)
 
 
 @app.route('/adminlog', methods=['GET', 'POST'])
@@ -57,9 +67,16 @@ def adminlog():
     return render_template('adminlog.html', error=error)
 
 
-@app.route('/admin')
+@app.route('/admin', methods=['GET', 'POST'])
 def admin():
+    with open('activity.json', 'r') as f:
+        data = json.loads(f.read())
+    if request.method == 'POST':
+        data.append([request.form['name'], request.form['activity'], request.form['hours']])
+        with open('activity.json', 'w') as f:
+            f.write(json.dumps(data))
     user = {'nickname': 'runner'}
     return render_template("admin.html",
                            title='admin',
-                           user=user)
+                           user=user,
+                           training=data)
