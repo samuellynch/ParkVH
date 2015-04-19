@@ -85,7 +85,6 @@
                 <ul>
                 <li><a href="index">Home</a></li>
                 <li><a href="trainingprogramme">Training Programme</a></li>
-                <li><a href="trainingprogress">Training Progress</a></li>
                 <li><a href="profile">Profile</a></li>
                 <li><a href="adminlog">Admin</a></li>
                 </ul>
@@ -101,17 +100,41 @@
             <div class="container">
                 <div class="jumbotron">
                     <form action="" method="post">
-                        <input type="text" placeholder="Name" name="name" value="{{
-                            request.form.name }}">
-                        <input type="text" placeholder="Running" name="running" value="{{
-                            request.form.running }}">
-                        <input type="text" placeholder="Cycling" name="cycling" value="{{
-                            request.form.cycling }}">
-                        <input type="text" placeholder="Swimming" name="swimming" value="{{
-                            request.form.swimming }}">
+                        <input type="text" placeholder="Name" name="name">
+                        <input type="date" placeholder="Date" name="date">
+                        <select name="activity">
+                            <option>Activity</option>
+                            <option>Running</option>
+                            <option>Cycling</option>
+                            <option>Swimming</option>
+                        </select>
+                        <input type="text" placeholder="speed" name="speed">
+                        <input type="text" placeholder="Hours" name="hours">
                         <input class="btn btn-default" type="submit" value="Submit">
                     </form>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="well">
+                <table class="table">
+                   <tr>
+                       <th>Name</th>
+                       <th>Date</th>
+                       <th>Activity</th>
+                       <th>Speed</th>
+                       <th>Hours</th>
+                   </tr>
+                    {% for item in training %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                        <td>{{ item[2] }}</td>
+                        <td>{{ item[3] }}</td>
+                        <td>{{ item[4] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
             </div>
         </div>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -125,5 +148,5 @@
                 });
             })();
         </script>
-    </body>
+</body>
 </html>

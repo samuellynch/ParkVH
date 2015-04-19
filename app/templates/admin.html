@@ -90,13 +90,28 @@
                 <ul>
                 <li><a href="index">Home</a></li>
                 <li><a href="trainingprogramme">Training Programme</a></li>
-                <li><a href="trainingprogress">Training Progress</a></li>
                 <li><a href="profile">Profile</a></li>
                 <li><a href="adminlog">Admin</a></li>
                 </ul>
             </nav>
             <div class="text">
-                <h1>"Running is not about being better than someone else, it's about being better than you used to be"</h1>
+                <h1>Chosen 'Running Team'</h1>
+            </div>
+            <div class="row">
+                <div class="well">
+                    <table class="table">
+                        <tr>
+                            <th>Name</th>
+                            <th>Hours</th>
+                        </tr>
+                        {% for item in training %}
+                        <tr>
+                            <td>{{ item[0] }}</td>
+                            <td>{{ item[4] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
             </div>
         </header>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
