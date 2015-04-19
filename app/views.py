@@ -69,12 +69,9 @@ def adminlog():
 
 @app.route('/admin', methods=['GET', 'POST'])
 def admin():
-    with open('activity.json', 'r') as f:
-        data = json.loads(f.read())
-    if request.method == 'POST':
-        data.append([request.form['name'], request.form['activity'], request.form['hours']])
-        with open('activity.json', 'w') as f:
-            f.write(json.dumps(data))
+    with open('activity.json') as data_file:
+        data = json.load(data_file)
+        print(data)
     user = {'nickname': 'runner'}
     return render_template("admin.html",
                            title='admin',
